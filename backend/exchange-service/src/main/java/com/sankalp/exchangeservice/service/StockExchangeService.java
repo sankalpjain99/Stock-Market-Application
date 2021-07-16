@@ -1,4 +1,4 @@
-package com.sankalp.ExchangeService.Services;
+package com.sankalp.exchangeservice.service;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,8 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.sankalp.ExchangeService.Entities.StockExchange;
-import com.sankalp.ExchangeService.Repositories.StockExchangeRepository;
+import com.sankalp.exchangeservice.entity.StockExchange;
+import com.sankalp.exchangeservice.repository.StockExchangeRepository;
 
 @Service
 public class StockExchangeService {

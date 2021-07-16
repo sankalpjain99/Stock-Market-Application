@@ -1,4 +1,4 @@
-package com.sankalp.ExchangeService.Controllers;
+package com.sankalp.exchangeservice.controller;
 
 import java.util.List;
 
@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sankalp.ExchangeService.Entities.StockExchange;
-import com.sankalp.ExchangeService.Services.StockExchangeService;
+import com.sankalp.exchangeservice.entity.StockExchange;
+import com.sankalp.exchangeservice.service.StockExchangeService;
 
 @RestController
 @RequestMapping("stockExchange")

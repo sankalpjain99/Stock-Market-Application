@@ -1,13 +1,13 @@
-package com.sankalp.SectorService;
+package com.sankalp.exchangeservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SectorServiceApplication {
+public class ExchangeServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SectorServiceApplication.class, args);
+		SpringApplication.run(ExchangeServiceApplication.class, args);
 	}
 
 }
