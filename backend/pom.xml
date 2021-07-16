@@ -9,7 +9,7 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>org.springframework</groupId>
-	<artifactId>Stock-Market-Application</artifactId>
+	<artifactId>stock-market-application</artifactId>
 	<version>0.1.0</version>
 	<packaging>pom</packaging>
 	<properties>
@@ -55,7 +55,8 @@
 		</dependency>
 	</dependencies>
 	<modules>
-		<module>ExchangeService</module>
+		<module>exchange-service</module>
+		<module>sector-service</module>
 	</modules>
 	<build>
 		<plugins>

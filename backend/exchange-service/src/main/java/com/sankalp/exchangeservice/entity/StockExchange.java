@@ -1,4 +1,4 @@
-package com.sankalp.ExchangeService.Entities;
+package com.sankalp.exchangeservice.entity;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
