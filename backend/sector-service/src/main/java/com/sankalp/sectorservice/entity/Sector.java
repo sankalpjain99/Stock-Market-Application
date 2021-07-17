@@ -1,12 +1,14 @@
 package com.sankalp.sectorservice.entity;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
 @Entity
 public class Sector {
@@ -19,6 +21,10 @@ public class Sector {
 	
 	private String brief;
 	
+	@OneToMany(mappedBy = "sector")
+	@JsonProperty(access = Access.WRITE_ONLY)
+	private List<Company> companies;
+
 	public Sector() {
 		super();
 	}
@@ -30,6 +36,13 @@ public class Sector {
 		this.setBrief(brief);
 	}
 	
+	public List<Company> getCompanies() {
+		return companies;
+	}
+
+	public void setCompanies(List<Company> companies) {
+		this.companies = companies;
+	}
 
 	public int getId() {
 		return id;

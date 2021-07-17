@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.sankalp.sectorservice.entity.Company;
 import com.sankalp.sectorservice.entity.Sector;
 import com.sankalp.sectorservice.service.SectorService;
 
@@ -38,6 +39,11 @@ public class SectorController {
 	@PostMapping("/sector")
 	public ResponseEntity<Sector> createSector(@RequestBody Sector sector){
 		return ResponseEntity.ok(sectorService.createSector(sector));
+	}
+	
+	@GetMapping("companies/{id}")
+	public ResponseEntity<List<Company>> getAllCompaniesBySector(@PathVariable(value = "id") int id){
+		return ResponseEntity.ok(sectorService.getCompaniesBySector(id));
 	}
 	
 }
