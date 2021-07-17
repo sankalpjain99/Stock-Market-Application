@@ -41,7 +41,7 @@ public class SectorController {
 		return ResponseEntity.ok(sectorService.createSector(sector));
 	}
 	
-	@GetMapping("companies/{id}")
+	@GetMapping("/companies/{id}")
 	public ResponseEntity<List<Company>> getAllCompaniesBySector(@PathVariable(value = "id") int id){
 		return ResponseEntity.ok(sectorService.getCompaniesBySector(id));
 	}
