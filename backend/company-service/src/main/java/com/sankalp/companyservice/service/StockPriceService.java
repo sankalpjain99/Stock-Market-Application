@@ -32,4 +32,8 @@ public class StockPriceService {
 		return failedInserts;
 	}
 	
+	public List<StockPrice> getStockPriceByCompany(int companyId, int exchangeId, String before, String after){
+		return stockPriceRepository.getStockPricesByCompany(companyId, exchangeId, before, after);
+	}
+	
 }
