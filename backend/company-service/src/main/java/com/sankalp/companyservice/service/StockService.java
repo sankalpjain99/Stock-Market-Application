@@ -21,5 +21,5 @@ public class StockService {
 	public Stock addStock(Stock stock) {
 		return stockRepository.save(stock);
 	}
-	
+
 }

@@ -8,5 +8,4 @@ import com.sankalp.companyservice.entity.Stock;
 @Repository
 public interface StockRepository extends JpaRepository<Stock, Integer>{
 
-	
 }
