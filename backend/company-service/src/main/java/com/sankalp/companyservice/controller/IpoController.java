@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sankalp.companyservice.entity.Company;
 import com.sankalp.companyservice.entity.Ipo;
 import com.sankalp.companyservice.service.IpoService;
 
@@ -37,7 +36,7 @@ public class IpoController {
 	@PutMapping("updateIpo/{ipoId}")
 	public ResponseEntity updateCompany(@PathVariable(value = "ipoId") int id, @RequestBody Ipo ipo) {
 		Ipo updatedIpo = ipoService.updateIpo(id, ipo);
-		return (updatedIpo != null)?ResponseEntity.ok(updatedIpo):ResponseEntity.ok("Company with id "+id+" not found.");
+		return (updatedIpo != null)?ResponseEntity.ok(updatedIpo):ResponseEntity.ok("Ipo with id "+id+" not found.");
 	}
 	
 	@GetMapping("/getIpo/{companyId}")
