@@ -54,6 +54,7 @@
 		<module>sector-service</module>
 		<module>company-service</module>
 		<module>excel-service</module>
+		<module>eureka-service</module>
 	</modules>
 	<build>
 		<plugins>

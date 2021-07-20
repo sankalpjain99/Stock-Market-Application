@@ -46,8 +46,7 @@ public class StockExchangeController {
 	
 	@GetMapping("/company/{exchangeId}")
 	public ResponseEntity getCompaniesByExchangeId(@PathVariable(value = "exchangeId") int id) {
-		RestTemplate restTemplate = new RestTemplate();
-		String apiUrl = "http://localhost:8084/company/getCompanyByExchange/" + id;
+		String apiUrl = "http://COMPANY-SERVICE/company/getCompanyByExchange/" + id;
 		ResponseEntity response = restTemplate.getForEntity(apiUrl , String.class);
 		return response;
 	}
