@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 import com.sankalp.exchangeservice.entity.StockExchange;
 import com.sankalp.exchangeservice.service.StockExchangeService;
@@ -21,6 +22,9 @@ public class StockExchangeController {
 
 	@Autowired
 	private StockExchangeService stockExchangeService;
+	
+	@Autowired
+	private RestTemplate restTemplate;
 	
 	@GetMapping("/exchanges")
 	public ResponseEntity<List<StockExchange>> getStockExchanges(){
@@ -38,6 +42,14 @@ public class StockExchangeController {
 	@PostMapping("/exchanges")
 	public ResponseEntity<StockExchange> addStockExchange(@RequestBody StockExchange stockExchange){
 		return ResponseEntity.ok(stockExchangeService.addStockExchange(stockExchange));
+	}
+	
+	@GetMapping("/company/{exchangeId}")
+	public ResponseEntity getCompaniesByExchangeId(@PathVariable(value = "exchangeId") int id) {
+		RestTemplate restTemplate = new RestTemplate();
+		String apiUrl = "http://localhost:8084/company/getCompanyByExchange/" + id;
+		ResponseEntity response = restTemplate.getForEntity(apiUrl , String.class);
+		return response;
 	}
 	
 }
