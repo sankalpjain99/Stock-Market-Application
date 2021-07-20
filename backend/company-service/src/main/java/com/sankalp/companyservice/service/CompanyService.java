@@ -40,6 +40,15 @@ public class CompanyService {
 		return null;
 	}
 	
+	public Company deactivateCompany(int id) {
+		Company companyToDelete = getCompanyById(id);
+		if(companyToDelete != null) {
+			companyRepository.delete(companyToDelete);
+			return companyToDelete;
+		}
+		return null;
+	}
+	
 	public List<Company> getCompanyByPattern(String pattern){
 		return companyRepository.findByNameContainingIgnoreCase(pattern);
 	}
