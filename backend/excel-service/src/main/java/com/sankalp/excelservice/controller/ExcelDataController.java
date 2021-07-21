@@ -23,7 +23,7 @@ public class ExcelDataController {
 	
 	@PostMapping("/uploadData")
 	public ResponseEntity<List<ExcelDataDTO>> addExcelData(@RequestBody List<ExcelDataDTO> data) {
-		String apiUrl = "http://localhost:8084/company/addStockPrices";
+		String apiUrl = "http://COMPANY-SERVICE/company/addStockPrices";
 		List<ExcelDataDTO> failedInserts = restTemplate.postForEntity(apiUrl, data, ArrayList.class).getBody();
 		if(failedInserts.size() == 0) {
 			return ResponseEntity.ok(failedInserts);

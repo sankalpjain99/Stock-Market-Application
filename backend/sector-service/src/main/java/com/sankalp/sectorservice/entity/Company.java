@@ -2,6 +2,7 @@ package com.sankalp.sectorservice.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
@@ -9,7 +10,7 @@ import javax.persistence.ManyToOne;
 public class Company {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
 	private String name;
@@ -19,6 +20,8 @@ public class Company {
 	private String ceo;
 	
 	private String brief;
+	
+	private String bod;
 	
 	@ManyToOne
 	private Sector sector;
@@ -83,6 +86,14 @@ public class Company {
 
 	public void setSector(Sector sector) {
 		this.sector = sector;
+	}
+
+	public String getBod() {
+		return bod;
+	}
+
+	public void setBod(String bod) {
+		this.bod = bod;
 	}
 	
 }

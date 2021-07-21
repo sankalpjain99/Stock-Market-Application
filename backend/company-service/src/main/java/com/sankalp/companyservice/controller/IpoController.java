@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,6 +31,12 @@ public class IpoController {
 	@PostMapping("/addIpo")
 	public ResponseEntity<Ipo> createCompany(@RequestBody Ipo ipo){
 		return ResponseEntity.ok(ipoService.addIpo(ipo));
+	}
+	
+	@PutMapping("updateIpo/{ipoId}")
+	public ResponseEntity updateCompany(@PathVariable(value = "ipoId") int id, @RequestBody Ipo ipo) {
+		Ipo updatedIpo = ipoService.updateIpo(id, ipo);
+		return (updatedIpo != null)?ResponseEntity.ok(updatedIpo):ResponseEntity.ok("Ipo with id "+id+" not found.");
 	}
 	
 	@GetMapping("/getIpo/{companyId}")

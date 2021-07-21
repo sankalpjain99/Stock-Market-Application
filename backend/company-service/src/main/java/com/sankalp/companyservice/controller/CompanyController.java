@@ -3,8 +3,8 @@ package com.sankalp.companyservice.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -41,7 +41,13 @@ public class CompanyController {
 	@PutMapping("/updateCompany/{id}")
 	public ResponseEntity updateCompany(@PathVariable(value="id") int id, @RequestBody Company company){
 		Company updatedCompany = companyService.updateCompany(id, company);
-		return (updatedCompany != null)?ResponseEntity.ok(updatedCompany):ResponseEntity.status(HttpStatus.NOT_FOUND).body("Company with id "+id+" not found.");
+		return (updatedCompany != null)?ResponseEntity.ok(updatedCompany):ResponseEntity.ok("Company with id "+id+" not found.");
+	}
+	
+	@DeleteMapping("deleteCompany/{id}")
+	public ResponseEntity deactivateCompany(@PathVariable(value="id") int id){
+		Company deletedCompany = companyService.deactivateCompany(id);
+		return (deletedCompany != null)?ResponseEntity.ok(deletedCompany):ResponseEntity.ok("Company with id "+id+" not found.");
 	}
 	
 	@GetMapping("/getCompanyByPattern/{pattern}")
