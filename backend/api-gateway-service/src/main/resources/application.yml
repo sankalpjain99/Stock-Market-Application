@@ -1,0 +1,32 @@
+server:
+  port: 8080
+
+spring:
+  main:    web-application-type: reactive
+  application:
+    name: API-GATEWAY-SERVICE
+  cloud:
+    gateway:
+      routes:
+        - id: EXCHANGE-SERVICE
+          uri: lb://EXCHANGE-SERVICE
+          predicates:
+            - Path=/stockExchange/**
+        - id: COMPANY-SERVICE
+          uri: lb://COMPANY-SERVICE
+          predicates:
+            - Path=/company/**
+        - id: EXCEL-SERVICE
+          uri: lb://EXCEL-SERVICE
+          predicates:
+            - Path=/excel/**
+        - id: SECTOR-SERVICE
+          uri: lb://SECTOR-SERVICE
+          predicates:
+            - Path=/sectors/**
+            
+eureka:
+  client:    register-with-eureka: true
+    fetch-registry: true
+    service-url:      defaultZone: http://localhost:8761/eureka
+  instance:    hostname: localhost
