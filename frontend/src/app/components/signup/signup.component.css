@@ -1,0 +1,53 @@
+body{
+  overflow: hidden;
+}
+
+img{
+  width: 70%;
+  margin: 15% auto;
+}
+
+h1{
+  text-align: center;
+  padding-top: 5%;
+}
+
+.form-div{
+  width: 70%;
+  margin: 10% auto;
+}
+
+.form-group{
+  padding: 2%;
+}
+
+label{
+  padding-bottom: 2px;
+}
+
+button{
+  margin: 8% 2%;
+  width: 46%;
+}
+
+@media screen and (max-width: 992px){
+
+  .form-div{
+    width: 90%;
+    margin: 0% auto;
+  }
+
+  img{
+    width: 70%;
+    margin: 10% auto;
+    text-align: center;
+  }
+
+  .container{
+    position: inherit;
+  }
+
+  h1{
+    padding-top: 15%;
+  }
+}
