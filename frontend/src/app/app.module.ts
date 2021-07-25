@@ -13,7 +13,8 @@ import { SectorComponent } from './components/sector/sector.component';
 import { HttpClientModule} from '@angular/common/http';
 import { ExchangeComponent } from './components/exchange/exchange.component';
 import { AddExchangeComponent } from './components/add-exchange/add-exchange.component';
-import { CompanyComponent } from './components/company/company.component'
+import { CompanyComponent } from './components/company/company.component';
+import { IpoComponent } from './components/ipo/ipo.component'
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { CompanyComponent } from './components/company/company.component'
     SectorComponent,
     ExchangeComponent,
     AddExchangeComponent,
-    CompanyComponent
+    CompanyComponent,
+    IpoComponent
   ],
   imports: [
     CommonModule,

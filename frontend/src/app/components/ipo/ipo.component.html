@@ -1,0 +1,64 @@
+<app-navbar [state]="state"></app-navbar>
+<div class="container">
+  <div class="container box-wrap">
+    <h1>IPO's</h1>
+    <button class="btn btn-dark add-btn col-2"  *ngIf="state=='admin'">Add a IPO</button>
+  </div>
+  <div class="mt-5 row container outer-div"  *ngIf="state=='user'">
+    <div class="dropdown col-xs-12 col-sm-6 col-xl-5 btn-div">
+      <button class="btn btn-outline-dark dropdown-toggle col-12" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+        {{dropDownTitle}}
+      </button>
+      <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton1">
+        <li class="dropdown-item" (click)="clearFilter()">Clear Filter</li>
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-item" *ngFor="let s of allIpos" (click)="onCompanyClick(s.company)">{{s.company.name}}</li>
+      </ul>
+    </div>
+    <div class="col-xs-12 col-sm-4 col-xl-3 btn-div">
+      <button class="btn btn-dark" (click)="onLoadComapnies()">Show Companies</button>
+    </div>
+  </div>
+  <div *ngIf="state=='admin'">
+    <div class="container box-wrap" *ngIf="this.ipos.length">
+      <ul class="list-group">
+        <li class="list-group-item p-2 d-flex flex-row">
+          <h5 class="col-2"><b>Company Name</b></h5>
+          <h5 class="col-2"><b>Listed In</b></h5>
+          <h5 class="col-2"><b>Price Per Share</b></h5>
+          <h5 class="col-1"><b>Shares</b></h5>
+          <h5 class="col-3"><b>Opening Date and Time</b></h5>
+          <h5 class="col-2"><b>Action</b></h5>
+        </li>
+        <li class="list-group-item p-2 d-flex flex-row" *ngFor="let c of ipos">
+          <p class="col-2">{{c.company.name}}</p>
+          <p class="col-2">{{c.stockExchange.name}}</p>
+          <p class="col-2">{{c.pricePerShare | currency:'INR'}}</p>
+          <p class="col-1">{{c.totalShares}}</p>
+          <p class="col-3">{{c.dateTime | date:'medium'}}</p>
+          <button class="btn btn-dark col-2">Update</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div  *ngIf="state=='user'">
+    <div class="container box-wrap" *ngIf="this.ipos.length">
+      <ul class="list-group">
+        <li class="list-group-item p-2 d-flex flex-row">
+          <h5 class="col-2"><b>Company Name</b></h5>
+          <h5 class="col-3"><b>Listed In</b></h5>
+          <h5 class="col-2"><b>Price Per Share</b></h5>
+          <h5 class="col-2"><b>Shares</b></h5>
+          <h5 class="col-3"><b>Opening Date and Time</b></h5>
+        </li>
+        <li class="list-group-item p-2 d-flex flex-row" *ngFor="let c of ipos">
+          <p class="col-2">{{c.company.name}}</p>
+          <p class="col-3">{{c.stockExchange.name}}</p>
+          <p class="col-2">{{c.pricePerShare | currency:'INR'}}</p>
+          <p class="col-2">{{c.totalShares}}</p>
+          <p class="col-3">{{c.dateTime | date:'medium'}}</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
