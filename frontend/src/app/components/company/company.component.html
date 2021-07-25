@@ -1,0 +1,28 @@
+<app-navbar [state]="state"></app-navbar>
+<div class="container">
+  <div class="container box-wrap">
+    <h1>Companies</h1>
+    <button class="btn btn-dark add-btn col-2">Add your Company</button>
+  </div>
+  <div class="container search-box d-flex flex-row mt-5">
+    <input type="text" class="col-9 p-2" placeholder="Seach Company Here" [(ngModel)]="pattern">
+    <button class="btn btn-dark col-3 flex-shrink-1 ms-3" (click)="getCompanyByPattern()">Search</button>
+  </div>
+  <div class="container box-wrap" *ngIf="this.companies.length">
+    <ul class="list-group">
+      <li class="list-group-item p-2 d-flex flex-row">
+        <h5 class="col-2"><b>Name</b></h5>
+        <h5 class="col-2"><b>Sector</b></h5>
+        <h5 class="col-3"><b>Brief</b></h5>
+        <h5 class="col-2"><b>Action</b></h5>
+      </li>
+      <li class="list-group-item p-2 d-flex flex-row" *ngFor="let c of companies">
+        <p class="col-2">{{c.name}}</p>
+        <p class="col-2">{{c.sector.name}}</p>
+        <p class="col-3">{{c.brief}}</p>
+        <button class="btn btn-dark col-2">Update</button>
+        <button class="btn btn-danger col-2 ms-5" (click)="deleteCompany(c.id)">Deactivate</button>
+      </li>
+    </ul>
+  </div>
+</div>

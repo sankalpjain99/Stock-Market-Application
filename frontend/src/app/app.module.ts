@@ -12,7 +12,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { SectorComponent } from './components/sector/sector.component';
 import { HttpClientModule} from '@angular/common/http';
 import { ExchangeComponent } from './components/exchange/exchange.component';
-import { AddExchangeComponent } from './components/add-exchange/add-exchange.component'
+import { AddExchangeComponent } from './components/add-exchange/add-exchange.component';
+import { CompanyComponent } from './components/company/company.component'
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AddExchangeComponent } from './components/add-exchange/add-exchange.com
     NotFoundComponent,
     SectorComponent,
     ExchangeComponent,
-    AddExchangeComponent
+    AddExchangeComponent,
+    CompanyComponent
   ],
   imports: [
     CommonModule,
