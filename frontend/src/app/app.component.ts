@@ -9,6 +9,6 @@ import { AuthService } from './services/auth.service';
 export class AppComponent {
   title = 'Stock Market Application';
   constructor(private authService:AuthService) {
-    authService.authenticate("user","user");
+    authService.authenticate("admin","admin");
   }
 }
