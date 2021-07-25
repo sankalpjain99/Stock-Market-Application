@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Company } from '../models/company-model';
+import { Stock } from '../models/stock-model';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,8 @@ export class CompanyService {
       "getCompanyByName":this.apiUrl+"/getCompanyByPattern",
       "updateCompany":this.apiUrl+"/updateCompany",
       "deleteCompany":this.apiUrl+"/deleteCompany",
-      "addCompany":this.apiUrl+"/addCompany"
+      "addCompany":this.apiUrl+"/addCompany",
+      "addStock":this.apiUrl+"/stocks"
     }
   }
 
@@ -56,6 +58,15 @@ export class CompanyService {
       })
     };
     return this.httpClient.delete<Company>(this.apiPaths.deleteCompany+"/"+id, httpOptions);
+  }
+
+  public addStock(stock:Stock){
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json'
+      })
+    };
+    return this.httpClient.post<Stock>(this.apiPaths.addStock, stock, httpOptions);
   }
 
 }
