@@ -7,6 +7,6 @@ export interface Ipo{
   stockExchange:Exchange;
   pricePerShare:number;
   totalShares:number;
-  dateTime:Date;
+  dateTime:string;
   remarks:string;
 }

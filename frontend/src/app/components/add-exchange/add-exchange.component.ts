@@ -16,13 +16,14 @@ export class AddExchangeComponent implements OnInit {
   constructor(private authService:AuthService, private exchangeService:ExchangeService) {
     this.state="";
     this.exchange={
-      "name":"New York State Exchange",
-      "brief": "Brief 3",
+      "id":0,
+      "name":"",
+      "brief": "",
       "address":{
-          "street": "Wall Street",
-          "city": "New York",
-          "country": "United States of America",
-          "zipCode": 10005
+          "street": "",
+          "city": "",
+          "country": "",
+          "zipCode": 0
       },
       "remarks":"Remark 3"
     }

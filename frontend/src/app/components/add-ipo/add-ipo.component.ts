@@ -27,7 +27,7 @@ export class AddIpoComponent implements OnInit {
       "id": 0,
       "pricePerShare": 0,
       "totalShares": 0,
-      "dateTime": new Date(),
+      "dateTime": "",
       "remarks": "",
       "company": {
           "id": 0,
@@ -84,7 +84,7 @@ export class AddIpoComponent implements OnInit {
 
   addStock(){
     var date: string = this.ipo.dateTime+":00.000+05:30";
-    this.ipo.dateTime = new Date(date);
+    this.ipo.dateTime = date;
     console.log(this.ipo);
     this.ipoService.addIpo(this.ipo).subscribe( addedIpo => {
       console.log(addedIpo);
@@ -96,7 +96,7 @@ export class AddIpoComponent implements OnInit {
       "id": 0,
       "pricePerShare": 0,
       "totalShares": 0,
-      "dateTime": new Date(),
+      "dateTime": "",
       "remarks": "",
       "company": {
           "id": 0,

@@ -17,7 +17,9 @@ import { CompanyComponent } from './components/company/company.component';
 import { IpoComponent } from './components/ipo/ipo.component';
 import { AddCompanyComponent } from './components/add-company/add-company.component';
 import { StockComponent } from './components/stock/stock.component';
-import { AddIpoComponent } from './components/add-ipo/add-ipo.component'
+import { AddIpoComponent } from './components/add-ipo/add-ipo.component';
+import { ComparisonComponent } from './components/comparison/comparison.component';
+import { HighchartsChartModule } from 'highcharts-angular';
 
 @NgModule({
   declarations: [
@@ -34,13 +36,15 @@ import { AddIpoComponent } from './components/add-ipo/add-ipo.component'
     IpoComponent,
     AddCompanyComponent,
     StockComponent,
-    AddIpoComponent
+    AddIpoComponent,
+    ComparisonComponent,
   ],
   imports: [
     CommonModule,
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    HighchartsChartModule
   ],
   providers: [],
   bootstrap: [AppComponent]

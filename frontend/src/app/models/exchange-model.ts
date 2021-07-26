@@ -1,5 +1,5 @@
 export interface Exchange{
-  id?:number;
+  id:number;
   name:string;
   brief:string;
   remarks:string;
