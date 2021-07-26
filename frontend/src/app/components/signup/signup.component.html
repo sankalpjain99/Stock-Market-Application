@@ -1,0 +1,39 @@
+<app-navbar [state]="state"></app-navbar>
+<h1>Join the Community</h1>
+<div class="container row">
+  <div class="col-xl-6 col-sm-0">
+    <div class="text-center">
+      <img src="../../../assets/signup.svg" alt="Login Image">
+    </div>
+  </div>
+  <div class="col-xl-6 col-sm-12">
+    <form class="form-div">
+      <div class="form-group">
+        <label>Username</label>
+        <input type="text" name="username" class="form-control" placeholder="Enter username" required>
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" name="password" class="form-control" placeholder="Enter Password" required>
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" name="email" class="form-control" placeholder="Enter Email" required>
+      </div>
+      <div class="form-group row">
+        <div class="col-4">
+          <label>ISD Code</label>
+          <input type="text" name="isd" class="form-control" placeholder="+91" required>
+        </div>
+        <div class="col-8">
+          <label>Mobile No</label>
+          <input type="number" name="mobile" class="form-control" placeholder="Enter Mobile No" required>
+        </div>
+      </div>
+      <div class="text-center">
+          <button type="submit" class="btn btn-dark">Submit</button>
+          <button type="reset" class="btn btn-secondary">Reset</button>
+      </div>
+  </form>
+  </div>
+</div>

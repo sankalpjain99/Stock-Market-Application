@@ -1,0 +1,21 @@
+<app-navbar [state]="state"></app-navbar>
+<h1>Login</h1>
+<div class="container">
+  <div class="text-center">
+    <img src="../../../assets/login.svg" alt="Login Image">
+  </div>
+  <form class="form-div">
+      <div class="form-group">
+        <label>Username</label>
+        <input type="text" name="username" class="form-control" placeholder="Enter Username" required [(ngModel)]="username">
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" name="password" class="form-control" placeholder="Password" required [(ngModel)]="password">
+      </div>
+      <div class="text-center">
+          <button type="submit" class="btn btn-dark" (click)="onSubmit()">Submit</button>
+          <button type="reset" class="btn btn-secondary">Reset</button>
+      </div>
+  </form>
+</div>

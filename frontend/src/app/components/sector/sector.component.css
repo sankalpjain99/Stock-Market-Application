@@ -1,0 +1,29 @@
+.btn-div{
+  padding: 0;
+}
+
+.container{
+  margin-top: 5%;
+}
+
+.dropdown{
+  margin-right: 3%;
+}
+
+button{
+  width: 100%;
+}
+
+img{
+  width: 30%;
+}
+
+.noshow{
+  margin-top: 10%;
+}
+
+@media screen and (max-width:575px){
+  button{
+    margin-top: 5%;
+  }
+}

@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,6 +17,7 @@ import org.springframework.web.client.RestTemplate;
 import com.sankalp.exchangeservice.entity.StockExchange;
 import com.sankalp.exchangeservice.service.StockExchangeService;
 
+@CrossOrigin("*")
 @RestController
 @RequestMapping("stockExchange")
 public class StockExchangeController {
@@ -39,7 +41,7 @@ public class StockExchangeController {
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No Stock Exchange found for the given Id");
 	}
 
-	@PostMapping("/exchanges")
+	@PostMapping("/addExchange")
 	public ResponseEntity<StockExchange> addStockExchange(@RequestBody StockExchange stockExchange){
 		return ResponseEntity.ok(stockExchangeService.addStockExchange(stockExchange));
 	}

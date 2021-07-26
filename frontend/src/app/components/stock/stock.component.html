@@ -1,0 +1,30 @@
+<app-navbar [state]="state"></app-navbar>
+<div class="container">
+  <h1>Add Your Stock</h1>
+  <form>
+    <div class="dropdown col-xs-6 col-sm-10 col-xl-6">
+      <button class="btn btn-outline-dark dropdown-toggle col-12" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+        {{companyTitle}}
+      </button>
+      <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton1">
+        <li class="dropdown-item" *ngFor="let s of companies" (click)="onCompanyClick(s)">{{s.name}}</li>
+      </ul>
+    </div>
+    <div class="dropdown col-xs-6 col-sm-10 col-xl-6 btn-div">
+      <button class="btn btn-outline-dark dropdown-toggle col-12" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+        {{exchangeTitle}}
+      </button>
+      <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton1">
+        <li class="dropdown-item" *ngFor="let s of exchanges" (click)="onExchangeClick(s)">{{s.name}}</li>
+      </ul>
+    </div>
+    <div class="form-group col-xs-6 col-sm-10 col-xl-6">
+      <label>Stock Code</label>
+      <input type="text" name="stockCode" class="form-control" placeholder="Enter Stock Code" required [(ngModel)]="stock.stockCode">
+    </div>
+    <div class="btn-grp row">
+      <button type="submit" class="btn btn-dark col-lg-2 col-md-3 col-sm-5 col-xs-6" (click)="addStock()">Submit</button>
+      <button type="reset" class="btn btn-secondary col-lg-2 col-md-3 col-sm-5 col-xs-6" id="reset-btn" (click)="onReset()">Reset</button>
+    </div>
+  </form>
+</div>

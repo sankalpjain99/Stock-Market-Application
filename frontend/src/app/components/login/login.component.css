@@ -1,0 +1,42 @@
+img{
+  width: 25%;
+  margin-top: 5%;
+}
+
+h1{
+  text-align: center;
+  margin-top: 3%;
+}
+
+.form-div{
+  width: 30%;
+  margin: 3% auto;
+}
+
+@media screen and (max-width: 992px){
+  .form-div{
+    width: 70%;
+    margin: 10% auto;
+  }
+
+  img{
+    width: 60%;
+    margin-top: 20%;
+  }
+
+  h1{
+    margin-top: 10%;
+  }
+}
+
+.form-group{
+  padding: 2%;
+}
+
+label{
+  padding-bottom: 2%;
+}
+
+button{
+  margin: 8% 2%;
+}

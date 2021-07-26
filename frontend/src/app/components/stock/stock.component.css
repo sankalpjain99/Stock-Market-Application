@@ -1,0 +1,63 @@
+.container{
+  margin-top: 5%;
+}
+
+.dropdown{
+  margin-top: 5%;
+}
+
+#reset-btn{
+  margin-left: 2%;
+}
+
+.btn-grp{
+  margin: 5% 0 2%;
+}
+
+.form-group{
+  margin-top: 5%;
+}
+
+@media screen and (max-width:768px) {
+
+  h1{
+    margin: 5% 7.5%;
+  }
+
+  .dropdown{
+    margin: 5% 7.5%;
+  }
+
+  .form-group{
+    margin: 5% 7.5%;
+  }
+
+  .container{
+    margin-top: 10%;
+  }
+
+  .user-form{
+    margin: 2% 5%;
+  }
+
+  .btn-grp{
+    margin: 5% 7.5%;
+  }
+
+  #reset-btn{
+    margin-left: 5%;
+  }
+
+}
+
+@media screen and (max-width:576px){
+  #reset-btn{
+    margin-left: 0;
+    margin-bottom: 5%;
+  }
+
+  button{
+    margin-top: 5%;
+  }
+
+}
