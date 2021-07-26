@@ -28,6 +28,10 @@
     margin: 5%;
   }
 
+  button{
+    word-wrap: break-word;
+  }
+
   .dropdown{
     margin: 2% 0;
     padding: 0;
