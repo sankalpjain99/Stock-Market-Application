@@ -5,6 +5,7 @@ import { Stock } from 'src/app/models/stock-model';
 import { AuthService } from 'src/app/services/auth.service';
 import { CompanyService } from 'src/app/services/company.service';
 import { ExchangeService } from 'src/app/services/exchange.service';
+import {Router} from "@angular/router"
 
 @Component({
   selector: 'app-stock',
@@ -20,7 +21,7 @@ export class StockComponent implements OnInit {
   public companyTitle:string;
   public exchangeTitle:string;
 
-  constructor(private authService:AuthService, private companyService:CompanyService, private exchangeService:ExchangeService) {
+  constructor(private authService:AuthService, private companyService:CompanyService, private exchangeService:ExchangeService, private router: Router) {
     this.state="";
     this.companyTitle="Please choose a company";
     this.exchangeTitle="Please choose a stock exchange";
@@ -83,6 +84,7 @@ export class StockComponent implements OnInit {
     this.companyService.addStock(this.stock).subscribe( addedStock => {
       console.log(addedStock);
     })
+    this.router.navigate(['/exchange']);
   }
 
   onReset(){

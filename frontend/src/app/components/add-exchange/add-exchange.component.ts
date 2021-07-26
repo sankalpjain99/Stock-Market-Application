@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Exchange } from 'src/app/models/exchange-model';
 import { AuthService } from 'src/app/services/auth.service';
 import { ExchangeService } from 'src/app/services/exchange.service';
+import {Router} from "@angular/router"
 
 @Component({
   selector: 'app-add-exchange',
@@ -13,7 +14,7 @@ export class AddExchangeComponent implements OnInit {
   public state:string;
   public exchange:Exchange;
 
-  constructor(private authService:AuthService, private exchangeService:ExchangeService) {
+  constructor(private authService:AuthService, private exchangeService:ExchangeService, private router: Router) {
     this.state="";
     this.exchange={
       "id":0,
@@ -38,6 +39,7 @@ export class AddExchangeComponent implements OnInit {
       console.log("Exchange Added");
       console.log(exchange);
     });
+    this.router.navigate(['/exchange']);
   }
 
 }

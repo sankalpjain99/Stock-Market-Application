@@ -20,6 +20,7 @@ import { StockComponent } from './components/stock/stock.component';
 import { AddIpoComponent } from './components/add-ipo/add-ipo.component';
 import { ComparisonComponent } from './components/comparison/comparison.component';
 import { HighchartsChartModule } from 'highcharts-angular';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { HighchartsChartModule } from 'highcharts-angular';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    HighchartsChartModule
+    HighchartsChartModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

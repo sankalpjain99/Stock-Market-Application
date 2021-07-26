@@ -2,7 +2,7 @@
 <div class="container">
   <div class="container box-wrap">
     <h1>Stock Exchanges</h1>
-    <button class="btn btn-dark add-btn">Add Stock Exchange</button>
+    <button class="btn btn-dark add-btn" routerLink="/addExchange">Add Stock Exchange</button>
   </div>
   <div class="container box-wrap" *ngIf="this.exchanges.length">
     <ul class="list-group">
@@ -18,7 +18,7 @@
         <p class="col-2">{{c.brief}}</p>
         <p class="col-4">{{c.address.street}}, {{c.address.city}}, {{c.address.country}}, {{c.address.zipCode}}</p>
         <p class="col-2">{{c.remarks}}</p>
-        <button class="btn btn-dark col-2">List Company</button>
+        <button class="btn btn-dark col-2" routerLink="/stock">Add Company</button>
       </li>
     </ul>
   </div>

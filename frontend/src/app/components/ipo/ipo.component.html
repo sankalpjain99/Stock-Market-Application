@@ -2,7 +2,7 @@
 <div class="container">
   <div class="container box-wrap">
     <h1>IPO's</h1>
-    <button class="btn btn-dark add-btn col-2"  *ngIf="state=='admin'">Add a IPO</button>
+    <button class="btn btn-dark add-btn col-2"  *ngIf="state=='admin'" routerLink="/addIpo">Add a IPO</button>
   </div>
   <div class="mt-5 row container outer-div"  *ngIf="state=='user'">
     <div class="dropdown col-xs-12 col-sm-6 col-xl-5 btn-div">

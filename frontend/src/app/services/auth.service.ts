@@ -13,7 +13,7 @@ export class AuthService {
     this.currentUser={
       username:"",
       password:"",
-      role:""
+      role:"unauthorized"
     };
     this.users = [
       {
