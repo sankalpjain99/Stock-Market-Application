@@ -21,6 +21,7 @@ import { AddIpoComponent } from './components/add-ipo/add-ipo.component';
 import { ComparisonComponent } from './components/comparison/comparison.component';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { AppRoutingModule } from './app-routing.module';
+import { ExcelDataComponent } from './components/excel-data/excel-data.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { AppRoutingModule } from './app-routing.module';
     StockComponent,
     AddIpoComponent,
     ComparisonComponent,
+    ExcelDataComponent,
   ],
   imports: [
     CommonModule,
