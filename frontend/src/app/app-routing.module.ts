@@ -25,6 +25,7 @@ const routes: Routes = [
   { path: 'addExchange', component: AddExchangeComponent },
   { path: 'ipo', component: IpoComponent },
   { path: 'addIpo', component: AddIpoComponent },
+  { path: 'updateIpo/:id', component: AddIpoComponent },
   { path: 'sector', component: SectorComponent },
   { path: 'stock', component: StockComponent },
   { path: '**', component: NotFoundComponent }
