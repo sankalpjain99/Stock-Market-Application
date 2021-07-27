@@ -17,8 +17,8 @@ export class IpoService {
     this.apiPaths = {
       "getAllIpos":this.apiUrl+"/getIpo",
       "getIpoByCompany":this.apiUrl+"/getIpo",
-      "updateIpo":this.apiUrl+"/updateIpo",
-      "addIpo":this.apiUrl+"/addIpo"
+      "updateIpo":"http://localhost:8084/company"+"/updateIpo",
+      "addIpo":"http://localhost:8084/company"+"/addIpo"
     }
   }
 

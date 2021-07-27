@@ -4,6 +4,6 @@ import { Exchange } from "./exchange-model";
 export interface Stock{
   id:number;
   company:Company;
-  exchange:Exchange;
+  stockExchange:Exchange;
   stockCode:string;
 }

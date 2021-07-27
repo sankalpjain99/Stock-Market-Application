@@ -17,8 +17,8 @@ import org.springframework.web.client.RestTemplate;
 import com.sankalp.exchangeservice.entity.StockExchange;
 import com.sankalp.exchangeservice.service.StockExchangeService;
 
-@CrossOrigin("*")
 @RestController
+@CrossOrigin(origins="*")
 @RequestMapping("stockExchange")
 public class StockExchangeController {
 

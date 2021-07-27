@@ -16,7 +16,7 @@ export class ExchangeService {
     this.apiUrl = environment.apiURL+"/stockExchange";
     this.apiPaths = {
       "getAllExchanges":this.apiUrl+"/exchanges",
-      "addExchange":this.apiUrl+"/addExchange"
+      "addExchange":"http://localhost:8082/stockExchange"+"/addExchange"
     }
   }
 

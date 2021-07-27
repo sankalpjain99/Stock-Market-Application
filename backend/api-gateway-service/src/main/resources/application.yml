@@ -2,7 +2,8 @@ server:
   port: 8080
 
 spring:
-  main:    web-application-type: reactive
+  main:
+    web-application-type: reactive
   application:
     name: API-GATEWAY-SERVICE
   cloud:
@@ -24,4 +25,8 @@ spring:
           uri: lb://SECTOR-SERVICE
           predicates:
             - Path=/sectors/**
+    discovery:
+      locator:
+        enabled: true
+
 

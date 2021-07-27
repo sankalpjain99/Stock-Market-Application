@@ -19,10 +19,10 @@ export class CompanyService {
       "getAllCompanies":this.apiUrl+"/getCompany",
       "getCompanyById":this.apiUrl+"/getCompany",
       "getCompanyByName":this.apiUrl+"/getCompanyByPattern",
-      "updateCompany":this.apiUrl+"/updateCompany",
-      "deleteCompany":this.apiUrl+"/deleteCompany",
-      "addCompany":this.apiUrl+"/addCompany",
-      "addStock":this.apiUrl+"/stocks"
+      "updateCompany":"http://localhost:8084/company"+"/updateCompany",
+      "deleteCompany":"http://localhost:8084/company"+"/deleteCompany",
+      "addCompany":"http://localhost:8084/company"+"/addCompany",
+      "addStock":"http://localhost:8084/company"+"/stocks"
     }
   }
 

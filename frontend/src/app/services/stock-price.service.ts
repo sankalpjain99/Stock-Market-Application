@@ -17,7 +17,7 @@ export class StockPriceService {
     this.apiUrl = environment.apiURL;
     this.apiPaths = {
       "getStockPrice":this.apiUrl+"/company/getStockPrices",
-      "addStockPrice":this.apiUrl+"/excel/uploadData"
+      "addStockPrice":"http://localhost:8085"+"/excel/uploadData"
     }
   }
 

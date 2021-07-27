@@ -56,6 +56,7 @@ export class ExcelDataComponent implements OnInit {
       }
     })
     this.total = excelData.length;
+    console.log(excelData);
     this.stockPriceService.addStockPrice(excelData).subscribe(rowsNotAdded => {
       console.log(rowsNotAdded);
       this.unsuccessfullAttempts = rowsNotAdded.length;
