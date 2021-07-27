@@ -20,6 +20,7 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'company', component: CompanyComponent },
   { path: 'addCompany', component: AddCompanyComponent },
+  { path: 'updateCompany/:id', component: AddCompanyComponent },
   { path: 'comparison', component: ComparisonComponent },
   { path: 'exchange', component: ExchangeComponent },
   { path: 'addExchange', component: AddExchangeComponent },
