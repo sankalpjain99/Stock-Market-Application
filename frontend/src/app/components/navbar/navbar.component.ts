@@ -10,9 +10,11 @@ import { AuthService } from 'src/app/services/auth.service';
 export class NavbarComponent implements OnInit {
 
   @Input() public state:string;
+  public currentPage:string;
 
   constructor(private authService:AuthService, private router:Router) {
     this.state = "";
+    this.currentPage = router.url;
   }
 
   ngOnInit(): void {
@@ -21,6 +23,9 @@ export class NavbarComponent implements OnInit {
   logout(){
     this.authService.authenticate("unauth","unauth");
     this.router.navigate(["/"]);
+    if(this.currentPage==="/"){
+      location.reload();
+    }
   }
 
 }
