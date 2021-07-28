@@ -78,6 +78,7 @@ export class AddIpoComponent implements OnInit {
         this.ipo = ipo;
         this.companyTitle = this.ipo.company.name;
         this.exchangeTitle = this.ipo.stockExchange.name;
+        this.ipo.dateTime = this.ipo.dateTime.substr(0,16);
       })
     }
   }
