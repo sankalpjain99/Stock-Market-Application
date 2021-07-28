@@ -1,6 +1,7 @@
 <app-navbar [state]="state"></app-navbar>
 <div class="container">
-  <h1>Add Your IPO</h1>
+  <h1 *ngIf="!this.companyId">Add Your IPO</h1>
+  <h1 *ngIf="this.companyId">Update IPO Details</h1>
   <form>
     <div class="row drop-box">
       <div class="dropdown col-xs-12 col-md-6 col-sm-12 col-lg-4 col-xl-4">

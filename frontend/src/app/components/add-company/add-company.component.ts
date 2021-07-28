@@ -4,7 +4,7 @@ import { Sector } from 'src/app/models/sector-model';
 import { AuthService } from 'src/app/services/auth.service';
 import { CompanyService } from 'src/app/services/company.service';
 import { SectorService } from 'src/app/services/sector.service';
-import {Router} from "@angular/router"
+import {ActivatedRoute, Router} from "@angular/router"
 
 @Component({
   selector: 'app-add-company',
@@ -17,11 +17,13 @@ export class AddCompanyComponent implements OnInit {
   public company:Company;
   public sectors:Sector[];
   public dropDownTitle:string;
+  public companyId:number;
 
-  constructor(private authService:AuthService, private sectorService:SectorService, private companyService:CompanyService, private router: Router) {
+  constructor(private authService:AuthService, private sectorService:SectorService, private companyService:CompanyService, private router: Router, private activatedRoute:ActivatedRoute) {
     this.state="";
     this.sectors=[];
     this.dropDownTitle="Please Choose a Sector"
+    this.companyId = this.activatedRoute.snapshot.params["id"];
     this.company = {
       "id":0,
       "name": "",
@@ -42,6 +44,12 @@ export class AddCompanyComponent implements OnInit {
     this.sectorService.getAllSectors().subscribe( sectors => {
       this.sectors=sectors;
     })
+    if(this.companyId){
+      this.companyService.getCompanyById(this.companyId).subscribe( companyFound => {
+        this.company = companyFound;
+        this.dropDownTitle = companyFound.sector.name;
+      })
+    }
   }
 
   addCompany(){

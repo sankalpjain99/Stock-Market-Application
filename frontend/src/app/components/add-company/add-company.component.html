@@ -1,6 +1,7 @@
 <app-navbar [state]="state"></app-navbar>
 <div class="container">
-  <h1>Add Company</h1>
+  <h1 *ngIf="!this.companyId">Add Company</h1>
+  <h1 *ngIf="this.companyId">Update Company</h1>
     <form>
       <div class="user-form row">
         <div class="col-lg-6 col-xs-12">

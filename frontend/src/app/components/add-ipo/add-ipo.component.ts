@@ -6,7 +6,7 @@ import { AuthService } from 'src/app/services/auth.service';
 import { CompanyService } from 'src/app/services/company.service';
 import { ExchangeService } from 'src/app/services/exchange.service';
 import { IpoService } from 'src/app/services/ipo.service';
-import {Router} from "@angular/router"
+import {ActivatedRoute, Router} from "@angular/router"
 
 @Component({
   selector: 'app-add-ipo',
@@ -21,9 +21,15 @@ export class AddIpoComponent implements OnInit {
   public exchanges:Exchange[];
   public companyTitle:string;
   public exchangeTitle:string;
+  public companyId:number;
 
-  constructor(private authService:AuthService, private companyService:CompanyService, private exchangeService:ExchangeService, private ipoService:IpoService, private router: Router) {
+  constructor(private authService:AuthService, private companyService:CompanyService, private exchangeService:ExchangeService, private ipoService:IpoService, private router: Router, private activatedRoute:ActivatedRoute) {
     this.state="";
+    this.companyTitle="Please choose a company";
+    this.exchangeTitle="Please choose a stock exchange";
+    this.companies=[];
+    this.exchanges=[];
+    this.companyId=this.activatedRoute.snapshot.params["id"];
     this.ipo={
       "id": 0,
       "pricePerShare": 0,
@@ -57,10 +63,6 @@ export class AddIpoComponent implements OnInit {
           }
       }
     }
-    this.companyTitle="Please choose a company";
-    this.exchangeTitle="Please choose a stock exchange";
-    this.companies=[];
-    this.exchanges=[];
   }
 
   ngOnInit(): void {
@@ -71,6 +73,14 @@ export class AddIpoComponent implements OnInit {
     this.exchangeService.getAllExchanges().subscribe(exchanges => {
       this.exchanges = exchanges;
     });
+    if(this.companyId){
+      this.ipoService.getIpoByCompany(this.companyId).subscribe( ipo => {
+        this.ipo = ipo;
+        this.companyTitle = this.ipo.company.name;
+        this.exchangeTitle = this.ipo.stockExchange.name;
+        this.ipo.dateTime = this.ipo.dateTime.substr(0,16);
+      })
+    }
   }
 
   onCompanyClick(company:Company){

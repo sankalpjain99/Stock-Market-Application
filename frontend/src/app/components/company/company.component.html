@@ -20,7 +20,7 @@
         <p class="col-2">{{c.name}}</p>
         <p class="col-2">{{c.sector.name}}</p>
         <p class="col-3">{{c.brief}}</p>
-        <button class="btn btn-dark col-2">Update</button>
+        <button class="btn btn-dark col-2" routerLink="/updateCompany/{{c.id}}">Update</button>
         <button class="btn btn-danger col-2 ms-5" (click)="deleteCompany(c.id)">Deactivate</button>
       </li>
     </ul>

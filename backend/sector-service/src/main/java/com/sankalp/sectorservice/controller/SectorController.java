@@ -18,8 +18,8 @@ import com.sankalp.sectorservice.entity.Sector;
 import com.sankalp.sectorservice.service.SectorService;
 
 @RestController
+@CrossOrigin(origins="*")
 @RequestMapping("sectors")
-@CrossOrigin(origins="http://localhost:4200")
 public class SectorController {
 
 	@Autowired

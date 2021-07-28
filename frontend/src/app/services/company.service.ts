@@ -17,11 +17,12 @@ export class CompanyService {
     this.apiUrl = environment.apiURL+"/company";
     this.apiPaths = {
       "getAllCompanies":this.apiUrl+"/getCompany",
+      "getCompanyById":this.apiUrl+"/getCompany",
       "getCompanyByName":this.apiUrl+"/getCompanyByPattern",
-      "updateCompany":this.apiUrl+"/updateCompany",
-      "deleteCompany":this.apiUrl+"/deleteCompany",
-      "addCompany":this.apiUrl+"/addCompany",
-      "addStock":this.apiUrl+"/stocks"
+      "updateCompany":"http://localhost:8084/company"+"/updateCompany",
+      "deleteCompany":"http://localhost:8084/company"+"/deleteCompany",
+      "addCompany":"http://localhost:8084/company"+"/addCompany",
+      "addStock":"http://localhost:8084/company"+"/stocks"
     }
   }
 
@@ -67,6 +68,10 @@ export class CompanyService {
       })
     };
     return this.httpClient.post<Stock>(this.apiPaths.addStock, stock, httpOptions);
+  }
+
+  public getCompanyById(id:number):Observable<Company>{
+    return this.httpClient.get<Company>(this.apiPaths.getCompanyById+"/"+id);
   }
 
 }

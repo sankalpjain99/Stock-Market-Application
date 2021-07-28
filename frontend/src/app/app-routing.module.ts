@@ -5,6 +5,7 @@ import { AddExchangeComponent } from './components/add-exchange/add-exchange.com
 import { AddIpoComponent } from './components/add-ipo/add-ipo.component';
 import { CompanyComponent } from './components/company/company.component';
 import { ComparisonComponent } from './components/comparison/comparison.component';
+import { ExcelDataComponent } from './components/excel-data/excel-data.component';
 import { ExchangeComponent } from './components/exchange/exchange.component';
 import { HomeComponent } from './components/home/home.component';
 import { IpoComponent } from './components/ipo/ipo.component';
@@ -20,13 +21,16 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'company', component: CompanyComponent },
   { path: 'addCompany', component: AddCompanyComponent },
+  { path: 'updateCompany/:id', component: AddCompanyComponent },
   { path: 'comparison', component: ComparisonComponent },
   { path: 'exchange', component: ExchangeComponent },
   { path: 'addExchange', component: AddExchangeComponent },
   { path: 'ipo', component: IpoComponent },
   { path: 'addIpo', component: AddIpoComponent },
+  { path: 'updateIpo/:id', component: AddIpoComponent },
   { path: 'sector', component: SectorComponent },
   { path: 'stock', component: StockComponent },
+  { path: 'importData', component: ExcelDataComponent },
   { path: '**', component: NotFoundComponent }
 ];
 

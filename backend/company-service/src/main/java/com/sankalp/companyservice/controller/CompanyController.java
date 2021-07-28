@@ -18,7 +18,7 @@ import com.sankalp.companyservice.entity.Company;
 import com.sankalp.companyservice.service.CompanyService;
 
 @RestController
-@CrossOrigin(origins="http://localhost:4200")
+@CrossOrigin(origins="*")
 @RequestMapping("company")
 public class CompanyController {
 	

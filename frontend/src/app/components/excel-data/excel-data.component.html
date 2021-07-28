@@ -1,0 +1,32 @@
+<app-navbar [state]="state"></app-navbar>
+<div class="container">
+  <h1>Upload Data</h1>
+  <div class="form-div">
+    <form>
+      <div class="form-group col-lg-6 col-sm-10">
+        <label for="fileName">Select a file</label>
+        <div class="input-group">
+          <input (change)="onFileChange($event)" type="file" id="fileName" class="form-control" required>
+        </div>
+      </div>
+      <div class="btn-group">
+        <button type="button" class="btn btn-dark btn-lg" (click)=onSubmit()>Upload</button>
+        <button type="reset" class="btn btn-secondary btn-lg" id="reset">Reset</button>
+      </div>
+    </form>
+  </div>
+  <div class="box-wrap" *ngIf="this.total">
+    <ul class="list-group">
+      <li class="list-group-item p-2 d-flex flex-row">
+        <h5 class="col-4"><b>Total Rows</b></h5>
+        <h5 class="col-4"><b>Rows Added</b></h5>
+        <h5 class="col-4"><b>Rows With Error</b></h5>
+      </li>
+      <li class="list-group-item p-2 d-flex flex-row">
+        <p class="col-4">{{this.total}}</p>
+        <p class="col-4">{{this.total-this.unsuccessfullAttempts}}</p>
+        <p class="col-4">{{this.unsuccessfullAttempts}}</p>
+      </li>
+    </ul>
+  </div>
+</div>

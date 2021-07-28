@@ -41,7 +41,7 @@ export class StockComponent implements OnInit {
               "brief": ""
           }
       },
-      "exchange": {
+      "stockExchange": {
           "id": 0,
           "name": "",
           "brief": "",
@@ -76,11 +76,10 @@ export class StockComponent implements OnInit {
 
   onExchangeClick(exchange:Exchange){
     this.exchangeTitle = exchange.name;
-    this.stock.exchange = exchange;
+    this.stock.stockExchange = exchange;
   }
 
   addStock(){
-    console.log(this.stock);
     this.companyService.addStock(this.stock).subscribe( addedStock => {
       console.log(addedStock);
     })
@@ -104,7 +103,7 @@ export class StockComponent implements OnInit {
               "brief": ""
           }
       },
-      "exchange": {
+      "stockExchange": {
           "id": 0,
           "name": "",
           "brief": "",
