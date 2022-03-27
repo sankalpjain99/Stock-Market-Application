@@ -11,6 +11,14 @@ A Full Stack Application made using Spring Boot in Backend, Angular in Frontend 
 6. Eureka Discovery Server
 7. Config Server
 
+## API Documentations
+
+1. [Company Service](https://documenter.getpostman.com/view/16352180/UVyn2ygC)
+2. [Excel Service](https://documenter.getpostman.com/view/16352180/UVyn2ykU)
+3. [Sector Service](https://documenter.getpostman.com/view/16352180/UVyn2ykV)
+4. [Stock Exchange Service](https://documenter.getpostman.com/view/16352180/UVyn2ykW)
+5. [User Service](https://documenter.getpostman.com/view/16352180/UVyn2ykX)
+
 ## Data Model Used
 
 ![Data Model](https://github.com/sankalpjain99/Stock-Market-Application/blob/main/documents/DataModel.png)
